@@ -1,6 +1,9 @@
 import  heapq
+
+
 '''
-堆
+堆 :查询集合中最大/小的部分数据，它内部有方法，传入集合源数据和需要查找的几个最值
+
 查找集合中最大或者最小的N个元素
 另一种方式，对集合进行排序然后使用切片
 当只查找一个时，可以用内置的max  min方法
@@ -11,6 +14,7 @@ import  heapq
 nums=[-4,23,109,32,4,-6,5,23]
 
 ''' 查找集合中最大的4个元素'''
+
 print(heapq.nlargest(4,nums))    # 你个 最大的数字   n  gt  est
 print(heapq.nsmallest(2,nums))   #最小的            n   smal  lt
 '''
