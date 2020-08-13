@@ -46,6 +46,10 @@ print('{},{},{}'.format(*li))
 name='a'
 n=37
 s='{name} has {n}  messages'
+
+'''
+vars()  收集一个字典包括当前命名空间所有的内容。
+'''
 print(vars(),"vars()函数能够收集一个字典包括执行当前文件所有的内容")
 print(s.format_map(vars()))
 
@@ -61,6 +65,9 @@ class person:
 
 p=person('田七',23)
 print('{name} has {age} age'.format_map(vars(p)))
+
+
+
 
 '''              自定义个函数/方法，能够解析文本插值，不需要进入传入format_map内的值，
            思路：1.在内部必须要调用执行方法的命名空间内的字典信息
@@ -78,7 +85,7 @@ print('{name} has {age} age'.format_map(vars(p)))
  '''
 
 class  sub(dict):
-      ''' 这个类继承于字典，重写字典的missing方法，如果找不到key值return结果'''
+      ''' 这个类继承于字典，使用魔法missing方法，如果找不到key值return结果'''
 
       def __missing__(self, key):
              return  '{'+key+'}'

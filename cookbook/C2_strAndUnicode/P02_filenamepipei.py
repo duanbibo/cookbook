@@ -37,11 +37,11 @@ import  os
 import copy
 
 
-data_foler=pathlib.Path("C:\\Users\87842\Desktop\Work\python\cookbook\cookbook")
+data_foler=pathlib.Path("C:\\Users\87842\Desktop\Work\python\cookbook\source")
 
-file_to_open=data_foler/"somefile.txt"
+file_to_open=data_foler/"test.txt"
 print("这是使用pathlib的库操作路径，",file_to_open)
-
+print(file_to_open.read_text())
 
 print(file_to_open.name,"打印文件名+类型")
 print(file_to_open.suffix,"打印文件名后缀即扩展名")
@@ -79,13 +79,18 @@ allpipei=data_foler.glob("**/*.py")  #在正则前面加上 **/就能递归匹�
 #print(list(allpipei))
 rg=data_foler.rglob("*")
 print(list(rg))
+print("rglob :递归遍历所有类型的文件")
 
 ''' 遍历目录下的所有文件'''
 #还是上面那个rglob方法，正则匹配写上*就可以
 
 
 ''' 匹配文件名，还是用glob模块进行'''
-import glob
+
+li=glob.glob(os.path.split(__file__)[0]+'/*.py')
+print(li,"glob库")
+
+
 
 ''' 这个glob库，专门做文件名的匹配,它匹配的结果默认返回列表'''
 
@@ -106,3 +111,12 @@ shutil.copy('C:/Users/87842/Desktop/Work/python/cookbook/cookbook/C2_strAndUnico
 '''
 import linecache
 
+
+
+'''exec执行'''
+
+#  execfile（文件名，全局，本地人）   execfile() 函数可以用来执行一个文件。
+# 在python 2存在。在python3 有exec()函数执行
+#exec（编译（打开（文件名，rb） ）.read（），文件name，'e​​xec'），globals，locals）
+#exec 是没有返回值的
+exec(open(r'H://test.txt','r').read())

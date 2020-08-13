@@ -3,7 +3,7 @@
 
 '''
 字典的key和value的计算，利用max ,min 这类生成器函数。
-他们都支持 一个关键字key,可以与lamdba函数一起工作
+他们都支持 一个关键字key,可以与lamdba函数一起工作，可以直接根据他们的key进行排序等操作
 '''
 
 
@@ -35,4 +35,11 @@ print(mk,mk[1])
 '''错误方式：不能使用key
         mk=max(prices,key=lambda s:s.keys())
         字典是无法通过key的func进行常规遍历的。 not callable  
+         需要用【】方式     mk=max(prices,key=lambda s:s[k])    根据value值进行排序
         '''
+
+''' 这种方式：使用字典的items返回一个类似于元祖的对象，对着对象可以调用下标，可以指定key或者value排序'''
+print(type(prices.items()))
+
+s=sorted(prices.items(),key=lambda item:item[1])
+print(s)

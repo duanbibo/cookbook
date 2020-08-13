@@ -17,6 +17,15 @@ nums=[-4,23,109,32,4,-6,5,23]
 
 print(heapq.nlargest(4,nums))    # 你个 最大的数字   n  gt  est
 print(heapq.nsmallest(2,nums))   #最小的            n   smal  lt
+
+
+'''
+利用堆的特性，拼接两个可迭代对象 ,走的是堆排序，要求2个可迭代对象是有序的
+'''
+list1=[1,3,5,7,9]
+list2=[2,4,6,8]
+print(list(heapq.merge(list1,list2)))
+
 '''
 关键参数key，还能够在更为复杂的数据结构上输出,与sorted的关键字key类似
            参数都是 实例的可迭代对象，以及可以与可迭代对象交互的lambda函数
@@ -35,6 +44,7 @@ portfolio = [
 
 hg=heapq.nlargest(3,portfolio,key=lambda s:s['shares'])
 print(hg)
+
 
 
 

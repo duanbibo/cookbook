@@ -1,6 +1,8 @@
 import heapq
 
+
 '''
+  利用堆实现优先级队列
 优先级队列  :插入的时候需要传入值和队列等级， 取出的时候按照队列等级取出
             如果两个元素优先级同样的话，默认取出先插入的元素
             https://blog.csdn.net/qq_35883464/article/details/99410423?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
@@ -30,7 +32,7 @@ import heapq
 
 '''
 
-class PriorityQueue:
+class PriorityQ:
       def __init__(self):
             self._queue=[]
             self._index=()
@@ -45,9 +47,37 @@ class PriorityQueue:
             return heapq.heappop(self._queue)[-1]
 
 
+class  Item():
+      def __init__(self,name):
+            self.name=name
 
-q=PriorityQueue()
-q.push('ddd',5)
-q.push('6dd',6)
-q.push('3dd',3)
-print(q.pop)
+      def __repr__(self):
+             return  'Item({!r})'.format(self.name)
+
+
+
+# q=PriorityQ()
+# q.push(Item('foo5'),5)
+# q.push(Item('foo6'),6)
+# q.push(Item('foo3'),3)
+# print(q.pop)
+
+#直接使用队列里面的优先级队列
+from queue import PriorityQueue
+from queue import LifoQueue       #先进后出队列
+
+youxian=PriorityQueue()
+youxian.put((4,'4')) #添加数据时，将数据和优先级等级一起当一个元祖传入
+youxian.put((3,'3'))
+youxian.put((2,'2'))
+youxian.put((5,'5'))
+print(youxian.get()) #返回优先级最低的数
+
+lf=LifoQueue()
+lf.put(('1'))
+lf.put(('2'))
+lf.put(('3'))
+lf.put(('4'))
+print(lf.get())     #返回最后面那个数据
+
+

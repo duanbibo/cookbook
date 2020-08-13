@@ -1,4 +1,4 @@
-import difflib
+import difflib        #比较字符串、文本的是不同处和相似率
 import linecache
 
 

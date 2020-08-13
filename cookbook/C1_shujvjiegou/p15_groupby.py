@@ -31,6 +31,7 @@ for i in g:
 #所以需要在分组前先进行排序。利用 sorted排序 itemget指定字段或者lambda表达式函数指定字段
 paixu=sorted(rows,key=itemgetter('date'))
 print(paixu)
+
 p=groupby(paixu,key=itemgetter('date'))
 for i in p:
       print(i[0],list(i[1]))
