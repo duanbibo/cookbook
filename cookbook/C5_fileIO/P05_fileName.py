@@ -28,11 +28,17 @@ print("=------------=")
 
 
 '''
- 利用 fnmath 和glob遍历目录符合的文件名
+ fnamth : 传入文件名和正则，返回布尔值类型，判断文件名是否符合正则表达式
+  
+  glob
+ 
 '''
 import fnmatch
 import glob
-
+fn=fnmatch.fnmatch(os.path.split(path)[1],'*.txt')
+print(fn)
+#glob.iglob()
+#glob.glob('/*.*')
 
 '''
 递归： os.path.walk            递归遍历

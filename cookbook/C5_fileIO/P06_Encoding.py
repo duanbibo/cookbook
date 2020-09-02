@@ -2,7 +2,11 @@ import sys
 import io
 
 '''
-io 包：为已经打开的文件流更改编码方式 利用io.TextIOWrapper   文本IO包装类
+io 包：为已经打开的文件流更改编码方式 
+
+
+   利用io.TextIOWrapper   文本IO包装类
+   
 '''
 print(sys.getdefaultencoding(),"获得系统的默认文件编码格式")
 import urllib.request

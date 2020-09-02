@@ -1,9 +1,20 @@
 from collections import  deque
 
 '''
+
+  
+
 collections的duque队列中有一个参数为maxlen,如果超过，就将前面的挤出队列
 '''
 d=deque(maxlen=5)
+all=dir(d)
+#获取对象中的方法，将魔法方法给取出
+func=[]
+for i in all:
+    if not i.startswith("_"):
+            func.append(i)
+print(func)
+
 list="012345678"
 for i in list:
       d.extend(i)
@@ -22,10 +33,10 @@ def search(lines,pattern,history):
                   yield  li ,previrous_line
             previrous_line.append(li)
 
-if __name__ == '__main__':
-    with open(r'../../cookbook/somefile.txt') as f:
-        for line, prevlines in search(f, 'Python', 5):
-            for pline in prevlines:
-                print(pline, end='')
-            print(line, end='')
-            print('-' * 20)
+# if __name__ == '__main__':
+#     with open(r'../../cookbook/somefile.txt') as f:
+#         for line, prevlines in search(f, 'Python', 5):
+#             for pline in prevlines:
+#                 print(pline, end='')
+#             print(line, end='')
+#             print('-' * 20)
